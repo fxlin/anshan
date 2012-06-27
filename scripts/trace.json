@@ -1,0 +1,56 @@
+{
+    "stages":
+    [
+        {
+            "name"       : "app",
+            "stage-id"   : "111",            
+        },
+        {
+            "name"       : "sf",
+            "stage-id"   : "222",            
+        }        
+    ]
+    
+    "periods":
+    [
+        {
+            "period-id"     : "1234",
+            "stage-id"      : "111",
+            "description"   : "app rendering",
+            
+            "start-event":
+            {
+                "event-id"      : "2222",
+                "timestamp"     : 12345678.90
+                "depends-on"    :       
+            },
+            
+            "end-event":
+            {
+                "event-id"      : "7788",
+                "timestamp"     : 12345900.90
+                "depends-on"    :                      
+            }
+        }
+        
+        {
+            "period-id" : "3456",
+            "stage-id"  : "222",
+            "description"   : "sf composing",
+                
+            "start-event":
+            {
+                "event-id"      : "3423",
+                "timestamp"     : 12345678.90
+                "depends-on"    : "2222"       
+            },
+            
+            "end-event":
+            {
+                "event-id"      : "7789",
+                "timestamp"     : 1231200.90
+                "depends-on"    :                      
+            }
+        }                
+    ]
+}
